@@ -14,12 +14,13 @@ public class ThreadPoolWithcallable {
         System.out.println("当前CPU核数:" + processors);
         ExecutorService pool = Executors.newFixedThreadPool(processors);
         for (int i = 1; i < 10; i++) {
+            int finalI = i;
             Future<String> submit = pool.submit(new Callable<String>() {
                 @Override
                 public String call() throws Exception {
                     String s = Thread.currentThread().getName();
                     System.out.println(s);
-                    return s + "--返回消息";
+                    return s + "--" + finalI + "返回消息";
                 }
             });
             //获取返回的消息会阻塞,直到获取到
