@@ -1,9 +1,6 @@
 package top.itning.zookeeper;
 
-import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.ZooDefs;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 import org.junit.After;
 import org.junit.Before;
@@ -42,7 +39,15 @@ public class ZkApiTest {
     @Before
     public void connectZK() throws IOException {
         System.out.println("start connect...");
-        zooKeeper = new ZooKeeper(CONNECT_STRING, SESSION_TIMEOUT, System.out::println);
+        zooKeeper = new ZooKeeper(CONNECT_STRING, SESSION_TIMEOUT, event -> {
+            System.out.println(event);
+            try {
+                //重新监听
+                zooKeeper.getChildren("/", true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     /**
