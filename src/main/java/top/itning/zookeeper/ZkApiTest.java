@@ -20,7 +20,7 @@ import static org.junit.Assert.assertFalse;
  *
  * @author wangn
  */
-public class ZkApi {
+public class ZkApiTest {
     /**
      * 逗号分隔主机：端口对，每个对应一个ZooKeeper 主机名/IP 与配置文件相同
      */
