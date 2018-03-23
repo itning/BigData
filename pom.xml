@@ -23,6 +23,12 @@
             <artifactId>zookeeper</artifactId>
             <version>3.4.11</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-core -->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-core</artifactId>
+            <version>5.7.0</version>
+        </dependency>
 
     </dependencies>
 
