@@ -8,3 +8,5 @@
 -> blockingqueue 消息队列相关
 
 -> activemq Java消息服务 ActiveMQ
+
+-> proxy JAVA动态代理
