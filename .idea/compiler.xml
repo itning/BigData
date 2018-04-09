@@ -9,6 +9,7 @@
         <module name="Activemq" />
         <module name="Blockingqueue" />
         <module name="Concurrent" />
+        <module name="Hadoop" />
         <module name="Proxy" />
         <module name="Zookeeper" />
       </profile>
@@ -18,6 +19,7 @@
       <module name="BigData" target="1.5" />
       <module name="Blockingqueue" target="1.5" />
       <module name="Concurrent" target="1.5" />
+      <module name="Hadoop" target="8" />
       <module name="Proxy" target="1.5" />
       <module name="Zookeeper" target="1.5" />
     </bytecodeTargetLevel>

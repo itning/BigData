@@ -12,6 +12,7 @@
         <module>Blockingqueue</module>
         <module>Concurrent</module>
         <module>Proxy</module>
+        <module>Hadoop</module>
     </modules>
     <packaging>pom</packaging>
 
