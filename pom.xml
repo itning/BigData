@@ -3,10 +3,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>top.itning</groupId>
-    <artifactId>bigdata</artifactId>
+    <groupId>top.itning.bigdata</groupId>
+    <artifactId>root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>Activemq</module>
+        <module>Zookeeper</module>
+        <module>Blockingqueue</module>
+        <module>Concurrent</module>
+        <module>Proxy</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>bigdata</name>
     <description>bigdata</description>
@@ -17,19 +24,6 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.11</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-core -->
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-core</artifactId>
-            <version>5.7.0</version>
-        </dependency>
-
     </dependencies>
 
 </project>

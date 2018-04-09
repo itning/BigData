@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Activemq" />
+        <module name="Blockingqueue" />
+        <module name="Concurrent" />
+        <module name="Proxy" />
+        <module name="Zookeeper" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="9">
+      <module name="Activemq" target="1.5" />
+      <module name="BigData" target="1.5" />
+      <module name="Blockingqueue" target="1.5" />
+      <module name="Concurrent" target="1.5" />
+      <module name="Proxy" target="1.5" />
+      <module name="Zookeeper" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Activemq/Activemq.iml" filepath="$PROJECT_DIR$/Activemq/Activemq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BigData.iml" filepath="$PROJECT_DIR$/.idea/BigData.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Blockingqueue/Blockingqueue.iml" filepath="$PROJECT_DIR$/Blockingqueue/Blockingqueue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Concurrent/Concurrent.iml" filepath="$PROJECT_DIR$/Concurrent/Concurrent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Proxy/Proxy.iml" filepath="$PROJECT_DIR$/Proxy/Proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zookeeper/Zookeeper.iml" filepath="$PROJECT_DIR$/Zookeeper/Zookeeper.iml" />
+    </modules>
+  </component>
+</project>
