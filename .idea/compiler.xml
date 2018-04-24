@@ -19,9 +19,9 @@
       <module name="BigData" target="1.5" />
       <module name="Blockingqueue" target="1.5" />
       <module name="Concurrent" target="1.5" />
-      <module name="Hadoop" target="8" />
+      <module name="Hadoop" target="1.5" />
       <module name="Proxy" target="1.5" />
-      <module name="Zookeeper" target="1.5" />
+      <module name="Zookeeper" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
