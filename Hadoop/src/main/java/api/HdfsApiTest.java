@@ -21,7 +21,7 @@ public class HdfsApiTest {
     /**
      * 默认HDFS地址
      */
-    private static final String DEFAULT_HDFS_PATH = "hdfs://192.168.55.57:9000/";
+    private static final String DEFAULT_HDFS_PATH = "hdfs://192.168.1.11:9000/";
     /**
      * FileSystem
      */
@@ -63,10 +63,10 @@ public class HdfsApiTest {
     @Test
     public void testUp() throws IOException {
         //存HDFS的位置
-        Path path = new Path(DEFAULT_HDFS_PATH + "tests.dat");
+        Path path = new Path(DEFAULT_HDFS_PATH + "in/liuliang.txt");
         FSDataOutputStream fsDataOutputStream = fileSystem.create(path);
         //源文件
-        FileInputStream fileInputStream = new FileInputStream("C://Users//wangn//Desktop//springboot_笔记.pdf");
+        FileInputStream fileInputStream = new FileInputStream("C://Users//wangn//Desktop//liuliang.txt");
         IOUtils.copy(fileInputStream, fsDataOutputStream);
     }
 
@@ -89,10 +89,10 @@ public class HdfsApiTest {
     @Test
     public void testDown() throws IOException {
         //HDFS中的源文件
-        Path path = new Path(DEFAULT_HDFS_PATH + "tests.dat");
+        Path path = new Path(DEFAULT_HDFS_PATH + "out/flowcount/part-r-00000");
         FSDataInputStream fsDataInputStream = fileSystem.open(path);
         //输出目录
-        FileOutputStream fileOutputStream = new FileOutputStream("C://Users//wangn//Desktop//test.pdf");
+        FileOutputStream fileOutputStream = new FileOutputStream("C://Users//wangn//Desktop//test.txt");
         IOUtils.copy(fsDataInputStream, fileOutputStream);
     }
 
@@ -113,7 +113,7 @@ public class HdfsApiTest {
     @Test
     public void testRemove() throws IOException {
         //recursive:递归删除：删文件夹其内容也删除
-        boolean delete = fileSystem.delete(new Path("/outtest3"), true);
+        boolean delete = fileSystem.delete(new Path("/out/flowcount"), true);
         System.out.println(delete);
     }
 
