@@ -102,6 +102,9 @@
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey.contribs:jersey-guice:1.9" level="project" />
     <orderEntry type="library" name="Maven: com.google.inject.extensions:guice-servlet:3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-common:2.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-yarn-client:2.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-yarn-server-common:2.8.1" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
   </component>
