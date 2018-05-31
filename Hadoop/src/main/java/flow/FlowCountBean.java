@@ -81,11 +81,8 @@ public class FlowCountBean implements Writable {
 
     @Override
     public String toString() {
-        return "FlowCountBean{" +
-                "tel=" + tel +
-                ", upload=" + upload +
-                ", download=" + download +
-                ", sum=" + sum +
-                '}';
+        return "upload=" + upload +
+                " download=" + download +
+                " sum=" + sum;
     }
 }
