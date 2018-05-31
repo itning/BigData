@@ -63,10 +63,10 @@ public class HdfsApiTest {
     @Test
     public void testUp() throws IOException {
         //存HDFS的位置
-        Path path = new Path(DEFAULT_HDFS_PATH + "in/liuliang.txt");
+        Path path = new Path(DEFAULT_HDFS_PATH + "rizhi/a.log");
         FSDataOutputStream fsDataOutputStream = fileSystem.create(path);
         //源文件
-        FileInputStream fileInputStream = new FileInputStream("C://Users//wangn//Desktop//liuliang.txt");
+        FileInputStream fileInputStream = new FileInputStream("C://Users//wangn//Desktop//a.log");
         IOUtils.copy(fileInputStream, fsDataOutputStream);
     }
 
@@ -89,7 +89,7 @@ public class HdfsApiTest {
     @Test
     public void testDown() throws IOException {
         //HDFS中的源文件
-        Path path = new Path(DEFAULT_HDFS_PATH + "out/flowcount/part-r-00000");
+        Path path = new Path(DEFAULT_HDFS_PATH + "out/rizhi/part-r-00000");
         FSDataInputStream fsDataInputStream = fileSystem.open(path);
         //输出目录
         FileOutputStream fileOutputStream = new FileOutputStream("C://Users//wangn//Desktop//test.txt");
