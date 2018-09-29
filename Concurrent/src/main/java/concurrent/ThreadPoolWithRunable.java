@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
  *
  * @author wangn
  */
+@SuppressWarnings("all")
 public class ThreadPoolWithRunable {
     public static void main(String[] args) {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();

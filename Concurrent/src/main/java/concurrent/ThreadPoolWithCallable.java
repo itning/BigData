@@ -8,7 +8,8 @@ import java.util.concurrent.*;
  *
  * @author wangn
  */
-public class ThreadPoolWithcallable {
+@SuppressWarnings("all")
+public class ThreadPoolWithCallable {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         int processors = Runtime.getRuntime().availableProcessors();
         System.out.println("当前CPU核数:" + processors);
