@@ -22,6 +22,7 @@ public class ConsumerTest implements Runnable {
         // consumer.close();
     }
 
+    @Override
     public void run() {
         try {
             ConsumerTool consumer = new ConsumerTool();

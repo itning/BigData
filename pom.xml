@@ -13,6 +13,8 @@
         <module>Concurrent</module>
         <module>Proxy</module>
         <module>Hadoop</module>
+        <module>Netty</module>
+        <module>Nio</module>
     </modules>
     <packaging>pom</packaging>
 

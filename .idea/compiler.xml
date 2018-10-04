@@ -10,6 +10,8 @@
         <module name="Blockingqueue" />
         <module name="Concurrent" />
         <module name="Hadoop" />
+        <module name="Netty" />
+        <module name="Nio" />
         <module name="Proxy" />
         <module name="Zookeeper" />
       </profile>
@@ -20,6 +22,8 @@
       <module name="Blockingqueue" target="1.8" />
       <module name="Concurrent" target="1.8" />
       <module name="Hadoop" target="1.8" />
+      <module name="Netty" target="1.8" />
+      <module name="Nio" target="1.8" />
       <module name="Proxy" target="1.8" />
       <module name="Zookeeper" target="1.8" />
     </bytecodeTargetLevel>

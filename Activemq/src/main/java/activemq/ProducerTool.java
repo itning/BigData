@@ -45,11 +45,14 @@ public class ProducerTool {
     // 关闭连接
     public void close() throws JMSException {
         System.out.println("Producer:->Closing connection");
-        if (producer != null)
+        if (producer != null) {
             producer.close();
-        if (session != null)
+        }
+        if (session != null) {
             session.close();
-        if (connection != null)
+        }
+        if (connection != null) {
             connection.close();
+        }
     }
 }      
