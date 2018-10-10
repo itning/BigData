@@ -15,6 +15,7 @@
         <module>Hadoop</module>
         <module>Netty</module>
         <module>Nio</module>
+        <module>Storm</module>
     </modules>
     <packaging>pom</packaging>
 

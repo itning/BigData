@@ -13,6 +13,7 @@
         <module name="Netty" />
         <module name="Nio" />
         <module name="Proxy" />
+        <module name="Storm" />
         <module name="Zookeeper" />
       </profile>
     </annotationProcessing>
@@ -25,6 +26,7 @@
       <module name="Netty" target="1.8" />
       <module name="Nio" target="1.8" />
       <module name="Proxy" target="1.8" />
+      <module name="Storm" target="1.8" />
       <module name="Zookeeper" target="1.8" />
     </bytecodeTargetLevel>
   </component>
