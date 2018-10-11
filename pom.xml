@@ -16,6 +16,7 @@
         <module>Netty</module>
         <module>Nio</module>
         <module>Storm</module>
+        <module>Kafka</module>
     </modules>
     <packaging>pom</packaging>
 

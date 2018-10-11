@@ -10,6 +10,7 @@
         <module name="Blockingqueue" />
         <module name="Concurrent" />
         <module name="Hadoop" />
+        <module name="Kafka" />
         <module name="Netty" />
         <module name="Nio" />
         <module name="Proxy" />
@@ -23,6 +24,7 @@
       <module name="Blockingqueue" target="1.8" />
       <module name="Concurrent" target="1.8" />
       <module name="Hadoop" target="1.8" />
+      <module name="Kafka" target="1.8" />
       <module name="Netty" target="1.8" />
       <module name="Nio" target="1.8" />
       <module name="Proxy" target="1.8" />
