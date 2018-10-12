@@ -18,3 +18,5 @@
 -> Storm 实时计算Storm相关
 
 -> Kafka Kafka Java API
+
+-> Kafka2Storm Kafka与Storm整合

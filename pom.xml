@@ -17,6 +17,7 @@
         <module>Nio</module>
         <module>Storm</module>
         <module>Kafka</module>
+        <module>Kafka2Storm</module>
     </modules>
     <packaging>pom</packaging>
 

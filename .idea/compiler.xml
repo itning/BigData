@@ -11,6 +11,7 @@
         <module name="Concurrent" />
         <module name="Hadoop" />
         <module name="Kafka" />
+        <module name="Kafka2Storm" />
         <module name="Netty" />
         <module name="Nio" />
         <module name="Proxy" />
@@ -25,6 +26,7 @@
       <module name="Concurrent" target="1.8" />
       <module name="Hadoop" target="1.8" />
       <module name="Kafka" target="1.8" />
+      <module name="Kafka2Storm" target="1.8" />
       <module name="Netty" target="1.8" />
       <module name="Nio" target="1.8" />
       <module name="Proxy" target="1.8" />

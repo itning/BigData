@@ -24,19 +24,17 @@ public class KafkaConsumerTest {
         // 自动commit的间隔
         props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
         props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "30000");
-        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.ByteArrayDeserializer");
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.ByteArrayDeserializer");
+        KafkaConsumer<Object, Object> consumer = new KafkaConsumer<>(props);
 
         consumer.subscribe(Collections.singletonList("first"));
         while (true) {
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
-            if (records.isEmpty()) {
-                System.out.println("wait...");
-            }
-            for (ConsumerRecord<String, String> record : records) {
+            ConsumerRecords<Object, Object> records = consumer.poll(Duration.ofMillis(1000));
+            for (ConsumerRecord<Object, Object> record : records) {
                 System.out.printf("partition = %d, topic = %s, offset = %d, key = %s, value = %s \n",
                         record.partition(), record.topic(), record.offset(), record.key(), record.value());
+                System.out.println(new String((byte[]) record.value()));
             }
         }
     }
