@@ -25,13 +25,18 @@ public class WordCountSplitBolt extends BaseRichBolt {
     @Override
     public void execute(Tuple input) {
         //"topic", "partition", "offset", "key", "value"
-        String value = input.getStringByField("value");
-        System.out.println("WordCountSplitBolt get->" + value);
-        char[] chars = value.toCharArray();
-        for (char c : chars) {
-            collector.emit(new Values(String.valueOf(c)));
+        try {
+            String value = input.getStringByField("value");
+            System.out.println("WordCountSplitBolt get->" + value);
+            char[] chars = value.toCharArray();
+            for (char c : chars) {
+                collector.emit(new Values(String.valueOf(c)));
+            }
+            collector.ack(input);
+        } catch (Exception e) {
+            collector.reportError(e);
+            collector.fail(input);
         }
-        collector.ack(input);
     }
 
     @Override

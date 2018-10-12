@@ -24,15 +24,20 @@ public class WordCountBolt extends BaseRichBolt {
 
     @Override
     public void execute(Tuple input) {
-        String word = input.getStringByField("word");
-        System.out.println("WordCountBolt get->" + word + " !" + word.length());
-        if (countMap.containsKey(word)) {
-            countMap.replace(word, countMap.get(word) + 1);
-        } else {
-            countMap.put(word, 1);
+        try {
+            String word = input.getStringByField("word");
+            System.out.println("WordCountBolt get->" + word + " !" + word.length());
+            if (countMap.containsKey(word)) {
+                countMap.replace(word, countMap.get(word) + 1);
+            } else {
+                countMap.put(word, 1);
+            }
+            System.out.println(countMap);
+            collector.ack(input);
+        } catch (Exception e) {
+            collector.reportError(e);
+            collector.fail(input);
         }
-        System.out.println(countMap);
-        collector.ack(input);
     }
 
     @Override
