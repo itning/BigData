@@ -8,7 +8,7 @@ object TestWordCount {
     val sc = new SparkContext(sparkConf)
     val array = sc.parallelize(Array(1, 4, 6, 3, 2, 7)).map(_ * 10).collect()
     println("start")
-    println(array)
+    println(array.toBuffer)
     println("end")
     sc.stop()
   }
