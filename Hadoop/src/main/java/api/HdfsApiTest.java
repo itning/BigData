@@ -21,7 +21,7 @@ public class HdfsApiTest {
     /**
      * 默认HDFS地址
      */
-    private static final String DEFAULT_HDFS_PATH = "hdfs://192.168.1.11:9000/";
+    private static final String DEFAULT_HDFS_PATH = "hdfs://node2:9000/";
     /**
      * FileSystem
      */
@@ -63,10 +63,10 @@ public class HdfsApiTest {
     @Test
     public void testUp() throws IOException {
         //存HDFS的位置
-        Path path = new Path(DEFAULT_HDFS_PATH + "rizhi/a.log");
+        Path path = new Path(DEFAULT_HDFS_PATH + "word/b.log");
         FSDataOutputStream fsDataOutputStream = fileSystem.create(path);
         //源文件
-        FileInputStream fileInputStream = new FileInputStream("C://Users//wangn//Desktop//a.log");
+        FileInputStream fileInputStream = new FileInputStream("C://Users//wangn//Desktop//b.txt");
         IOUtils.copy(fileInputStream, fsDataOutputStream);
     }
 
