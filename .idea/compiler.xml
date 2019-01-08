@@ -11,11 +11,12 @@
         <module name="Concurrent" />
         <module name="Hadoop" />
         <module name="Kafka" />
-        <module name="kafka2storm" />
         <module name="Kafka2Storm" />
+        <module name="kafka2storm" />
         <module name="Netty" />
         <module name="Nio" />
         <module name="Proxy" />
+        <module name="Scala" />
         <module name="Spark" />
         <module name="Storm" />
         <module name="Zookeeper" />
@@ -33,6 +34,7 @@
       <module name="Netty" target="1.8" />
       <module name="Nio" target="1.8" />
       <module name="Proxy" target="1.8" />
+      <module name="Scala" target="1.8" />
       <module name="Spark" target="1.8" />
       <module name="Storm" target="1.8" />
       <module name="Zookeeper" target="1.8" />

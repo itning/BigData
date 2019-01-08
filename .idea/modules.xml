@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/Netty/Netty.iml" filepath="$PROJECT_DIR$/Netty/Netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nio/Nio.iml" filepath="$PROJECT_DIR$/Nio/Nio.iml" />
       <module fileurl="file://$PROJECT_DIR$/Proxy/Proxy.iml" filepath="$PROJECT_DIR$/Proxy/Proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Scala/Scala.iml" filepath="$PROJECT_DIR$/Scala/Scala.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spark/Spark.iml" filepath="$PROJECT_DIR$/Spark/Spark.iml" />
       <module fileurl="file://$PROJECT_DIR$/Storm/Storm.iml" filepath="$PROJECT_DIR$/Storm/Storm.iml" />
       <module fileurl="file://$PROJECT_DIR$/Zookeeper/Zookeeper.iml" filepath="$PROJECT_DIR$/Zookeeper/Zookeeper.iml" />

@@ -19,6 +19,7 @@
         <module>Kafka</module>
         <module>Kafka2Storm</module>
         <module>Spark</module>
+        <module>Scala</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -22,3 +22,5 @@
 -> Kafka2Storm Kafka与Storm整合
 
 -> Spark Spark相关API
+
+-> Scala Scala学习
