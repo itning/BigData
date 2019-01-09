@@ -1,9 +1,5 @@
 package top.itning.basis
 
-class Basis {
-
-}
-
 object Basis {
   def main(args: Array[String]): Unit = {
     varVal()
