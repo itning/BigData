@@ -23,7 +23,7 @@ object ArrayTest {
     arrayBuffer ++= a
     arrayBuffer.insert(0, 9, 8, 7)
     arrayBuffer remove 0
-    println("arrayBuffer: " + arrayBuffer)
+    println(s"arrayBuffer: $arrayBuffer")
     a.sortBy(x => x)
     a.sortWith(_ > _)
     a.sortWith((a, b) => a > b)

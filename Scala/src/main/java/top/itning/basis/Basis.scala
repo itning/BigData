@@ -21,7 +21,7 @@ object Basis {
     val y = if (x > 1) x else x - 1
     //缺失else
     val z = if (x != 1) x
-    println("ifElse Method invoked: z==" + z + " " + z.getClass.getSimpleName)
+    println(s"ifElse Method invoked: z==$z " + z.getClass.getSimpleName)
   }
 
   def forOfTo(): Unit = {
@@ -35,7 +35,7 @@ object Basis {
     }
     println()
     val v = for (i <- 1 to 10) yield i * 10
-    println("v is: " + v)
+    println(s"v is: $v")
     for (i <- 1 until 10) {
       print(i + " ")
     }
