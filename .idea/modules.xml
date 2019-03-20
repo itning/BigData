@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Activemq/Activemq.iml" filepath="$PROJECT_DIR$/Activemq/Activemq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aio/Aio.iml" filepath="$PROJECT_DIR$/Aio/Aio.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/BigData.iml" filepath="$PROJECT_DIR$/.idea/BigData.iml" />
       <module fileurl="file://$PROJECT_DIR$/Blockingqueue/Blockingqueue.iml" filepath="$PROJECT_DIR$/Blockingqueue/Blockingqueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/Concurrent/Concurrent.iml" filepath="$PROJECT_DIR$/Concurrent/Concurrent.iml" />

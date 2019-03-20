@@ -21,6 +21,7 @@
         <module>Spark</module>
         <module>Scala</module>
         <module>Guava</module>
+        <module>Aio</module>
     </modules>
     <packaging>pom</packaging>
 

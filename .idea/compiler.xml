@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Activemq" />
+        <module name="Aio" />
         <module name="Blockingqueue" />
         <module name="Concurrent" />
         <module name="Guava" />
@@ -25,6 +26,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="Activemq" target="1.8" />
+      <module name="Aio" target="1.8" />
       <module name="BigData" target="1.8" />
       <module name="Blockingqueue" target="1.8" />
       <module name="Concurrent" target="1.8" />
