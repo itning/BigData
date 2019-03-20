@@ -20,6 +20,7 @@
         <module>Kafka2Storm</module>
         <module>Spark</module>
         <module>Scala</module>
+        <module>Guava</module>
     </modules>
     <packaging>pom</packaging>
 

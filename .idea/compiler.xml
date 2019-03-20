@@ -9,6 +9,7 @@
         <module name="Activemq" />
         <module name="Blockingqueue" />
         <module name="Concurrent" />
+        <module name="Guava" />
         <module name="Hadoop" />
         <module name="Kafka" />
         <module name="Kafka2Storm" />
@@ -27,6 +28,7 @@
       <module name="BigData" target="1.8" />
       <module name="Blockingqueue" target="1.8" />
       <module name="Concurrent" target="1.8" />
+      <module name="Guava" target="1.8" />
       <module name="Hadoop" target="1.8" />
       <module name="Kafka" target="1.8" />
       <module name="Kafka2Storm" target="1.8" />
