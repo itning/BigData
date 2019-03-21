@@ -30,13 +30,15 @@ public class TestAsynchronousServerSocketChannel {
                 serverSocketChannel.accept(null, this);
                 ByteBuffer buffer = ByteBuffer.allocate(1024);
                 result.read(buffer, buffer, new CompletionHandler<Integer, ByteBuffer>() {
-
                     @Override
                     public void completed(Integer integer, ByteBuffer attachment) {
                         System.out.println(integer);
                         System.out.println(attachment.toString());
                         System.out.println(new String(attachment.array(), StandardCharsets.UTF_8));
-                        countDownLatch.countDown();
+                        ByteBuffer buffer = ByteBuffer.allocate(1024);
+                        buffer.put("哈哈".getBytes());
+                        buffer.flip();
+                        result.write(buffer);
                     }
 
                     @Override
