@@ -1,4 +1,4 @@
-package proxy;
+package proxy.jdk;
 
 /**
  * 原来对象

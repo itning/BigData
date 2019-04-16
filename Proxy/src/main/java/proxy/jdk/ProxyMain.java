@@ -1,4 +1,4 @@
-package proxy;
+package proxy.jdk;
 
 /**
  * 动态代理 主方法
