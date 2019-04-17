@@ -2,6 +2,9 @@ package top.itning
 
 import org.apache.spark.{SparkConf, SparkContext}
 
+/**
+  * -Dspark.master=local[*] -Dhadoop.home.dir=G:\\winutils\\hadoop-2.8.3
+  */
 object TestWordCount {
   def main(args: Array[String]): Unit = {
     val sparkConf = new SparkConf().setAppName("wordCount")
