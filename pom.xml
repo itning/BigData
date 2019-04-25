@@ -22,6 +22,7 @@
         <module>Scala</module>
         <module>Guava</module>
         <module>Aio</module>
+        <module>UDP</module>
     </modules>
     <packaging>pom</packaging>
 
