@@ -28,3 +28,5 @@
 -> Guava Google工具类学习
 
 -> UDP UDP服务
+
+-> RabbitMQ 消息中间件演示
