@@ -1,6 +1,17 @@
 # BigData
 学习大数据的练习和笔记
 
+[![GitHub stars](https://img.shields.io/github/stars/itning/BigData.svg?style=social&label=Stars)](https://github.com/itning/BigData/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/itning/BigData.svg?style=social&label=Fork)](https://github.com/itning/BigData/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/itning/BigData.svg?style=social&label=Watch)](https://github.com/itning/BigData/watchers)
+[![GitHub followers](https://img.shields.io/github/followers/itning.svg?style=social&label=Follow)](https://github.com/itning?tab=followers)
+
+[![GitHub issues](https://img.shields.io/github/issues/itning/BigData.svg)](https://github.com/itning/BigData/issues)
+[![GitHub license](https://img.shields.io/github/license/itning/BigData.svg)](https://github.com/itning/BigData/blob/master/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/itning/BigData.svg)](https://github.com/itning/BigData/commits)
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/itning/BigData.svg)](https://github.com/itning/BigData)
+[![HitCount](http://hits.dwyl.io/itning/BigData.svg)](http://hits.dwyl.io/itning/BigData)
+
 -> zookeeper Zookeeper 相关API
 
 -> concurrent JAVA并发编程相关
