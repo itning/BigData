@@ -23,6 +23,7 @@
         <module>Guava</module>
         <module>Aio</module>
         <module>UDP</module>
+        <module>Elasticsearch</module>
     </modules>
     <packaging>pom</packaging>
 
