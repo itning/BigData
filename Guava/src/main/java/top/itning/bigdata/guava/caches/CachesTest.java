@@ -4,6 +4,7 @@ import com.google.common.cache.*;
 import org.junit.Test;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -13,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class CachesTest {
     @Test
-    public void test() {
+    public void test() throws ExecutionException {
         LoadingCache<String, String> graphs = CacheBuilder.newBuilder()
                 .maximumSize(1000)
                 .expireAfterWrite(10, TimeUnit.MINUTES)
@@ -28,11 +29,13 @@ public class CachesTest {
                     @Override
                     @ParametersAreNonnullByDefault
                     public String load(String key) throws Exception {
-                        return null;
+                        return "k:" + key;
                     }
                 });
 
         Cache<String, String> cache = CacheBuilder.newBuilder()
                 .build();
+        String kk = graphs.get("kk");
+        System.out.println(kk);
     }
 }

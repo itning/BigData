@@ -4,7 +4,6 @@ import com.google.common.collect.*;
 import org.junit.Test;
 import sun.security.provider.certpath.Vertex;
 
-import java.util.Comparator;
 import java.util.Map;
 
 /**
@@ -36,7 +35,7 @@ public class NewCollectionTypesTest {
     @Test
     public void sortedMultisetTest() {
         //TreeMultiset实现SortedMultiset接口。
-        TreeMultiset<Integer> multiset = new TreeMultiset<>((Comparator<Integer>) (o1, o2) -> {
+        TreeMultiset<Integer> multiset = TreeMultiset.create((o1, o2) -> {
             if (o1 > o2) {
                 return 1;
             } else if (o1 < o2) {
@@ -94,12 +93,12 @@ public class NewCollectionTypesTest {
     @Test
     public void classToInstanceMapTest() {
         //ClassToInstanceMap是一种特殊的Map：它的键是类型，而值是符合键所指类型的对象。
-        ClassToInstanceMap<Number> numberDefaults=MutableClassToInstanceMap.create();
+        ClassToInstanceMap<Number> numberDefaults = MutableClassToInstanceMap.create();
         numberDefaults.putInstance(Integer.class, Integer.valueOf(0));
     }
 
     @Test
-    public void rangeSetTest(){
+    public void rangeSetTest() {
         //RangeSet描述了一组不相连的、非空的区间。
         //当把一个区间添加到可变的RangeSet时，所有相连的区间会被合并，空区间会被忽略。
         RangeSet<Integer> rangeSet = TreeRangeSet.create();
@@ -111,7 +110,7 @@ public class NewCollectionTypesTest {
     }
 
     @Test
-    public void rangeMapTest(){
+    public void rangeMapTest() {
         //RangeMap描述了”不相交的、非空的区间”到特定值的映射。
         //和RangeSet不同，RangeMap不会合并相邻的映射，即便相邻的区间映射到相同的值。
         RangeMap<Integer, String> rangeMap = TreeRangeMap.create();
