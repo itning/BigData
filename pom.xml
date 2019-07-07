@@ -24,6 +24,7 @@
         <module>Aio</module>
         <module>UDP</module>
         <module>Elasticsearch</module>
+        <module>Algorithm</module>
     </modules>
     <packaging>pom</packaging>
 
