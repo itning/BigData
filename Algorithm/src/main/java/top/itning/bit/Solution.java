@@ -8,12 +8,16 @@ package top.itning.bit;
  */
 public class Solution {
     public static void main(String[] args) {
-        int i = new Solution().NumberOf1(-102);
+        int i = new Solution().NumberOf1(-12);
         System.out.println(i);
     }
 
     public int NumberOf1(int n) {
-
-        return 0;
+        int count = 0;
+        while (n != 0) {
+            n &= (n - 1);
+            ++count;
+        }//while
+        return count;
     }
 }
