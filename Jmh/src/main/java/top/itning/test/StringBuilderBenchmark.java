@@ -1,6 +1,7 @@
 package top.itning.test;
 
 import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -28,11 +29,13 @@ public class StringBuilderBenchmark {
     }
 
     @Benchmark
-    public void testStringBuilderAdd() {
+    public void testStringBuilderAdd(Blackhole bh) {
+        // Blackhole会消费传进来的值，不提供任何信息来确定这些值是否在之后被实际使用
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 10; i++) {
             sb.append(i);
         }
+        //bh.consume(sb.toString());
         print(sb.toString());
     }
 
