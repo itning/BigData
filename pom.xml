@@ -25,6 +25,7 @@
         <module>UDP</module>
         <module>Elasticsearch</module>
         <module>Algorithm</module>
+        <module>Jmh</module>
     </modules>
     <packaging>pom</packaging>
 
