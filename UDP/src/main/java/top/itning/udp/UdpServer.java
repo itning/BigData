@@ -5,6 +5,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author itning
@@ -12,6 +13,9 @@ import java.nio.charset.StandardCharsets;
  */
 public class UdpServer {
     public static void main(String[] args) throws IOException, InterruptedException {
+        InetAddress inetAddress = InetAddress.getLocalHost();
+        System.out.println(inetAddress);
+
         DatagramSocket socket = new DatagramSocket();
 
         Receive receive = new Receive(socket);
@@ -19,12 +23,13 @@ public class UdpServer {
 
         int i = 0;
         while (true) {
-            byte[] b = (i++ + "s").getBytes(StandardCharsets.UTF_8);
-            DatagramPacket packet = new DatagramPacket(b, b.length, InetAddress.getLocalHost(), 10000);
+            String data = i++ + "s";
+            byte[] b = data.getBytes(StandardCharsets.UTF_8);
+            DatagramPacket packet = new DatagramPacket(b, b.length, inetAddress, 10000);
             packet.setData(b);
             socket.send(packet);
-            Thread.sleep(1000);
-            System.out.println("send: Data Length " + packet.getLength());
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("send: " + data);
         }
     }
 
