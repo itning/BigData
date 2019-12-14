@@ -23,7 +23,7 @@ public class UdpClient {
                     ":" +
                     packet.getPort() +
                     " " +
-                    new String(data, StandardCharsets.UTF_8) +
+                    new String(data, 0, packet.getLength(), StandardCharsets.UTF_8) +
                     " and length " +
                     packet.getLength();
             System.out.println(stringBuilder);

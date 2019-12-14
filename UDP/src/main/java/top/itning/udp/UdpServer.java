@@ -19,12 +19,12 @@ public class UdpServer {
 
         int i = 0;
         while (true) {
-            byte[] b = (i++ + "s").getBytes();
+            byte[] b = (i++ + "s").getBytes(StandardCharsets.UTF_8);
             DatagramPacket packet = new DatagramPacket(b, b.length, InetAddress.getLocalHost(), 10000);
             packet.setData(b);
             socket.send(packet);
             Thread.sleep(1000);
-            System.out.println(i);
+            System.out.println("send: Data Length " + packet.getLength());
         }
     }
 
@@ -44,7 +44,7 @@ public class UdpServer {
                 DatagramPacket packet = new DatagramPacket(buf, buf.length);
                 while (true) {
                     datagramSocket.receive(packet);
-                    System.out.println(new String(packet.getData(), StandardCharsets.UTF_8));
+                    System.out.println("receive: " + new String(packet.getData(), 0, packet.getLength(), StandardCharsets.UTF_8));
                 }
             } catch (IOException ignored) {
             }
