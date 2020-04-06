@@ -36,7 +36,7 @@ public class ChatClient {
                         }
                     })
                     .option(ChannelOption.SO_KEEPALIVE, true)
-                    .connect("172.16.28.19", 8866)
+                    .connect("127.0.0.1", 8866)
                     .sync()
                     .channel();
             try (BufferedReader in = new BufferedReader(new InputStreamReader(System.in))) {

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室测试</title>
+</head>
+<body>
+<label for="message"></label>
+<input type="text" id="message">
+<input type="button" value="发送" id="send">
+<div>
+    <p>接收到的消息：</p>
+    <div id="msg_here"></div>
+</div>
+<script>
+    'use strict';
+    if (window.WebSocket) {
+        const sendInputElement = document.getElementById('message');
+        const sendBtnElement = document.getElementById('send');
+        const writeMsgElement = document.getElementById('msg_here');
+        const instance = new WebSocket("ws://127.0.0.1:8866/ws");
+
+        instance.onopen = function () {
+            writeMsgElement.innerHTML += '服务器已连接 <br/>'
+        };
+
+        instance.onclose = function () {
+            writeMsgElement.innerHTML += '服务器已断开 <br/>'
+        };
+
+        instance.onmessage = function (e) {
+            writeMsgElement.innerHTML += e.data + '<br/>'
+        };
+
+        sendBtnElement.addEventListener('click', function () {
+            instance.send(sendInputElement.value);
+        })
+
+    } else {
+        alert('浏览器不支持websocket');
+    }
+</script>
+</body>
+</html>
