@@ -10,6 +10,7 @@ import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
+import io.netty.handler.timeout.IdleStateHandler;
 
 /**
  * @author itning
@@ -31,6 +32,8 @@ public class WebSocketChatServer {
                                     new ChunkedWriteHandler(),
                                     new HttpObjectAggregator(1024 * 64),
                                     new WebSocketServerProtocolHandler("/ws"),
+                                    new IdleStateHandler(4, 8, 12),
+                                    new HeartBeatHandler(),
                                     new WebSocketChatServerHandler()
                             );
                         }

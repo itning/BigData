@@ -34,7 +34,11 @@
 
         sendBtnElement.addEventListener('click', function () {
             instance.send(sendInputElement.value);
-        })
+        });
+
+        window.onbeforeunload = function () {
+            instance.close();
+        };
 
     } else {
         alert('浏览器不支持websocket');
