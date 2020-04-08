@@ -11,9 +11,9 @@ import java.util.Objects;
  *
  * @author wangn
  */
-public class FIleTest {
+public class FileTest {
     public static void main(String[] args) {
-        String inFile = Objects.requireNonNull(FIleTest.class.getClassLoader().getResource("test.txt")).getFile();
+        String inFile = Objects.requireNonNull(FileTest.class.getClassLoader().getResource("test.txt")).getFile();
         try (FileInputStream fin = new FileInputStream(inFile);
              FileChannel fc = fin.getChannel();
              FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\wangn\\Desktop\\out.txt");
