@@ -85,10 +85,10 @@ public class ServerSocketServer {
                     if (key.isReadable()) {
                         handleRead(key);
                     }
-                    if (key.isWritable() && key.isValid()) {
+                    if (key.isValid() && key.isWritable()) {
                         handleWrite(key);
                     }
-                    if (key.isConnectable()) {
+                    if (key.isValid() && key.isConnectable()) {
                         System.out.println("is Connect able = true");
                     }
                     iter.remove();

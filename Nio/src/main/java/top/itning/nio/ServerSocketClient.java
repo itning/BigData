@@ -19,7 +19,7 @@ public class ServerSocketClient {
             if (socketChannel.finishConnect()) {
                 int i = 0;
                 //循环发送
-                while (true) {
+                while (i < 5) {
                     TimeUnit.SECONDS.sleep(1);
                     String info = "I'm " + i++ + "-th information from client";
                     buffer.clear();
@@ -31,6 +31,7 @@ public class ServerSocketClient {
                         socketChannel.write(buffer);
                     }
                 }
+                socketChannel.close();
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
