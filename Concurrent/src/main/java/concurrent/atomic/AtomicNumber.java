@@ -9,6 +9,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 所以，所谓原子类说简单点就是具有原子/原子操作特征的类。
  *
  * @author itning
+ * @see java.util.concurrent.atomic.AtomicInteger
+ * @see java.util.concurrent.atomic.AtomicBoolean
+ * @see java.util.concurrent.atomic.AtomicLong
+ * @see java.util.concurrent.atomic.AtomicReference
+ * @see java.util.concurrent.atomic.AtomicIntegerArray
+ * @see java.util.concurrent.atomic.AtomicLongArray
+ * @see java.util.concurrent.atomic.AtomicReferenceArray
  */
 public class AtomicNumber {
     public static void main(String[] args) {
