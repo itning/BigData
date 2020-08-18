@@ -1,13 +1,15 @@
 package top.itning.kafka;
 
-import org.apache.kafka.clients.producer.*;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author wangn
@@ -15,7 +17,7 @@ import java.util.concurrent.Future;
 public class KafkaProducerTest {
     private static final Logger logger = LoggerFactory.getLogger(KafkaProducerTest.class);
 
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
+    public static void main(String[] args) throws InterruptedException {
         String topic = "test_topic";
 
         Properties props = new Properties();
@@ -27,7 +29,7 @@ public class KafkaProducerTest {
         for (int messageNo = 1; messageNo < 100000; messageNo++) {
             // 5、调用producer的send方法发送数据
             // 注意：这里需要指定 partitionKey，用来配合自定义的MyLogPartitioner进行数据分发
-            Thread.sleep(1);
+            TimeUnit.SECONDS.sleep(1);
             logger.info("send：{}", messageNo);
             // 异步发送
             producer.send(new ProducerRecord<>(topic, messageNo + ""), (metadata, exception) -> {
@@ -38,9 +40,9 @@ public class KafkaProducerTest {
                 }
             });
             // 同步发送
-            Future<RecordMetadata> send = producer.send(new ProducerRecord<>(topic, messageNo + ""));
-            RecordMetadata recordMetadata = send.get();
-            logger.info("done：{}", recordMetadata);
+            //Future<RecordMetadata> send = producer.send(new ProducerRecord<>(topic, messageNo + ""));
+            //RecordMetadata recordMetadata = send.get();
+            //logger.info("done：{}", recordMetadata);
         }
         producer.flush();
         producer.close();
