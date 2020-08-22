@@ -9,8 +9,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 /**
  * Zookeeper JAVA API
@@ -105,7 +104,7 @@ public class ZkApiTest {
     @Test
     public void deleteNode() throws KeeperException, InterruptedException {
         zooKeeper.delete("/clientTest", -1);
-        assertEquals(null, zooKeeper.exists("/clientTest", false));
+        assertNull(zooKeeper.exists("/clientTest", false));
     }
 
 
