@@ -2,6 +2,7 @@ package top.itning.sentinel.config.annotation;
 
 import com.alibaba.csp.sentinel.Entry;
 import com.alibaba.csp.sentinel.EntryType;
+import com.alibaba.csp.sentinel.ResourceTypeConstants;
 import com.alibaba.csp.sentinel.SphU;
 import com.alibaba.csp.sentinel.annotation.aspectj.AbstractSentinelAspectSupport;
 import com.alibaba.csp.sentinel.context.ContextUtil;
@@ -43,7 +44,7 @@ public class SentinelResourceProAspect extends AbstractSentinelAspectSupport {
         Entry entry = null;
         try {
             ContextUtil.enter(resourceName);
-            entry = SphU.entry(resourceName, entryType);
+            entry = SphU.entry(resourceName, ResourceTypeConstants.COMMON_WEB, entryType, pjp.getArgs());
             return pjp.proceed();
         } catch (BlockException ex) {
             logger.warn(ex.getRuleLimitApp(), ex);
