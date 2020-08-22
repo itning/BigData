@@ -1,1 +1,1 @@
-[]
+[{"count":0.2,"grade":1,"limitApp":"default","minRequestAmount":5,"resource":"test","slowRatioThreshold":1.0,"statIntervalMs":1000,"timeWindow":5}]

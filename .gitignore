@@ -5,3 +5,4 @@ target/
 .idea/
 logs/
 out/
+sentinel_log/

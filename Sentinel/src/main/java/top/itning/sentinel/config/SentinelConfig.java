@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import top.itning.sentinel.config.annotation.SentinelResourceProAspect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,11 @@ public class SentinelConfig {
     public SentinelResourceAspect sentinelResourceAspect() {
         initFlowRules();
         return new SentinelResourceAspect();
+    }
+
+    @Bean
+    public SentinelResourceProAspect sentinelResourceProAspect() {
+        return new SentinelResourceProAspect();
     }
 
     public void initFlowRules() {
