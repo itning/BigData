@@ -15,7 +15,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class KafkaConsumerTest {
     private static final Logger logger = LoggerFactory.getLogger(KafkaConsumerTest.class);

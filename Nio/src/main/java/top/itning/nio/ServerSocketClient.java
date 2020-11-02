@@ -7,7 +7,7 @@ import java.nio.channels.SocketChannel;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class ServerSocketClient {
     public static void main(String[] args) {

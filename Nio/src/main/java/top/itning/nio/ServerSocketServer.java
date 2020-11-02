@@ -10,7 +10,7 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class ServerSocketServer {
     private static final int BUF_SIZE = 1024;

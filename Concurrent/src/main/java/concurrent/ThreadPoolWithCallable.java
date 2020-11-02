@@ -6,7 +6,7 @@ import java.util.concurrent.*;
  * 提交 Callable，该方法返回一个 Future 实例表示任务的状态
  * 调用submit提交任务, 匿名Callable,重写call方法, 有返回值, 获取返回值会阻塞,一直要等到线程任务返回结果
  *
- * @author wangn
+ * @author itning
  */
 @SuppressWarnings("all")
 public class ThreadPoolWithCallable {

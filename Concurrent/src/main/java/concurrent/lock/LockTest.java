@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 一个线程获取到锁另一个需要获取同一把锁的线程无需一直等待<br/>
  * Lock必须手动释放锁
  *
- * @author wangn
+ * @author itning
  */
 @SuppressWarnings("all")
 public class LockTest {

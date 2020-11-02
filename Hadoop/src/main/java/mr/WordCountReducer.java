@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class WordCountReducer extends Reducer<Text, LongWritable, Text, LongWritable> {
     private static final LongWritable LONG_WRITABLE = new LongWritable();

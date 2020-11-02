@@ -12,7 +12,7 @@ import org.apache.storm.topology.TopologyBuilder;
 import org.apache.storm.tuple.Fields;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class WordCountTopology {
     public static void main(String[] args) {

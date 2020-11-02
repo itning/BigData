@@ -28,7 +28,7 @@ public class MysqlRunner {
         String[] fields = {"id", "date", "pid", "amount"};
         DBInputFormat.setInput(job, MysqlRecord.class, "t_order", null, null, fields);
 
-        FileOutputFormat.setOutputPath(job, new Path("C:\\Users\\wangn\\Desktop\\b"));
+        FileOutputFormat.setOutputPath(job, new Path("C:\\Users\\itning\\Desktop\\b"));
 
         job.waitForCompletion(true);
     }

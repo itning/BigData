@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * lockInterruptibly 可中断的锁
  *
- * @author wangn
+ * @author itning
  */
 @SuppressWarnings("all")
 public class LockInterruptibly {

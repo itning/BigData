@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadFactory;
 /**
  * 缓存线程池<br>
  *
- * @author wangn
+ * @author itning
  */
 @SuppressWarnings("all")
 public class CachedThreadPoolTest {

@@ -11,7 +11,7 @@ import org.apache.storm.tuple.Values;
 import java.util.Map;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class WordCountSplitBolt extends BaseRichBolt {
 

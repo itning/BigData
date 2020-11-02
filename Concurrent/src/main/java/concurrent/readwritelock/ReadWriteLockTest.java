@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * 读可以一起读,但是有写锁必须等待写锁释放才可进行读写<br/>
  * 一个线程已经在读,其它线程想写必须等待读锁释放<br/>
  *
- * @author wangn
+ * @author itning
  */
 @SuppressWarnings("all")
 public class ReadWriteLockTest {

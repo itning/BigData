@@ -3,7 +3,7 @@ package proxy.jdk;
 /**
  * 业务接口
  *
- * @author wangn
+ * @author itning
  */
 public interface OriginalObject {
     /**

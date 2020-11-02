@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 /**
  * 固定线程池
  *
- * @author wangn
+ * @author itning
  */
 @SuppressWarnings("all")
 public class FixedThreadPoolTest {

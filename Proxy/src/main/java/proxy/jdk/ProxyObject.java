@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
 /**
  * 代理对象实现
  *
- * @author wangn
+ * @author itning
  */
 public class ProxyObject {
     /**

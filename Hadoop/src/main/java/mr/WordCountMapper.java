@@ -14,7 +14,7 @@ import java.io.IOException;
  * 3->Text 用户输出的KEY
  * 4->LongWritable 用户输出的VALUE
  *
- * @author wangn
+ * @author itning
  */
 public class WordCountMapper extends Mapper<LongWritable, Text, Text, LongWritable> {
     private static final Text TEXT = new Text();

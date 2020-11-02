@@ -14,13 +14,13 @@ import static org.junit.Assert.*;
 /**
  * Zookeeper JAVA API
  *
- * @author wangn
+ * @author itning
  */
 public class ZkApiTest {
     /**
      * 逗号分隔主机：端口对，每个对应一个ZooKeeper 主机名/IP 与配置文件相同
      */
-    private static final String CONNECT_STRING = "192.168.55.56:2181,192.168.55.57:2181,192.168.55.58:2181";
+    private static final String CONNECT_STRING = "10.0.10.21:15311,10.0.10.22:15311,10.0.10.23:15311";
     /**
      * 会话超时（毫秒）
      */

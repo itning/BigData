@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 队列测试
  *
- * @author wangn
+ * @author itning
  */
 public class BlockingQueueTest {
     public static void main(String[] args) {

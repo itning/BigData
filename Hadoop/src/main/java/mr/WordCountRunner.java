@@ -12,7 +12,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class WordCountRunner {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {

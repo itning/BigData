@@ -33,8 +33,8 @@ public class FlowCountRunner {
         /*FileInputFormat.setInputPaths(job, "hdfs://192.168.1.11:9000/in");
         FileOutputFormat.setOutputPath(job, new Path("hdfs://192.168.1.11:9000/out/flowcount"));*/
 
-        FileInputFormat.setInputPaths(job, new Path("C:\\Users\\wangn\\Desktop\\a"));
-        FileOutputFormat.setOutputPath(job, new Path("C:\\Users\\wangn\\Desktop\\b"));
+        FileInputFormat.setInputPaths(job, new Path("C:\\Users\\itning\\Desktop\\a"));
+        FileOutputFormat.setOutputPath(job, new Path("C:\\Users\\itning\\Desktop\\b"));
 
         job.waitForCompletion(true);
     }

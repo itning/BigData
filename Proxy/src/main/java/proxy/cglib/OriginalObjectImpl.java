@@ -3,7 +3,7 @@ package proxy.cglib;
 /**
  * 原来对象
  *
- * @author wangn
+ * @author itning
  */
 public class OriginalObjectImpl implements OriginalObject {
     /**

@@ -15,7 +15,7 @@ import java.net.URISyntaxException;
 import java.util.Arrays;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class HdfsApiTest {
     /**
@@ -66,7 +66,7 @@ public class HdfsApiTest {
         Path path = new Path(DEFAULT_HDFS_PATH + "word/b.log");
         FSDataOutputStream fsDataOutputStream = fileSystem.create(path);
         //源文件
-        FileInputStream fileInputStream = new FileInputStream("C://Users//wangn//Desktop//b.txt");
+        FileInputStream fileInputStream = new FileInputStream("C://Users//itning//Desktop//b.txt");
         IOUtils.copy(fileInputStream, fsDataOutputStream);
     }
 
@@ -77,8 +77,8 @@ public class HdfsApiTest {
      */
     @Test
     public void testUpload() throws IOException {
-        fileSystem.copyFromLocalFile(new Path("C://Users//wangn//Desktop//a.txt"), new Path("/test"));
-        fileSystem.copyToLocalFile(new Path("/test"), new Path("C://Users//wangn//Desktop//a.txt"));
+        fileSystem.copyFromLocalFile(new Path("C://Users//itning//Desktop//a.txt"), new Path("/test"));
+        fileSystem.copyToLocalFile(new Path("/test"), new Path("C://Users//itning//Desktop//a.txt"));
     }
 
     /**
@@ -92,7 +92,7 @@ public class HdfsApiTest {
         Path path = new Path(DEFAULT_HDFS_PATH + "out/rizhi/part-r-00000");
         FSDataInputStream fsDataInputStream = fileSystem.open(path);
         //输出目录
-        FileOutputStream fileOutputStream = new FileOutputStream("C://Users//wangn//Desktop//test.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("C://Users//itning//Desktop//test.txt");
         IOUtils.copy(fsDataInputStream, fileOutputStream);
     }
 

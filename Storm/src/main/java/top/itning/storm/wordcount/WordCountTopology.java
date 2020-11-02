@@ -8,7 +8,7 @@ import org.apache.storm.tuple.Fields;
 /**
  * Topology:Storm中运行的一个实时应用程序的名称(拓扑)
  *
- * @author wangn
+ * @author itning
  */
 public class WordCountTopology {
     public static void main(String[] args) {

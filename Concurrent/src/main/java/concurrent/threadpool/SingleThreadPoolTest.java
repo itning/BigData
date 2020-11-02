@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
  * 排队执行<br/>
  * 因为是单线程池,线程名字都相同
  *
- * @author wangn
+ * @author itning
  */
 @SuppressWarnings("all")
 public class SingleThreadPoolTest {

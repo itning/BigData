@@ -3,7 +3,7 @@ package voliatle;
 /**
  * volatile 测试
  *
- * @author wangn
+ * @author itning
  */
 @SuppressWarnings("all")
 public class TestVolatile {

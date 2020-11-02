@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 在一个topology中获取源数据流的组件
  *
- * @author wangn
+ * @author itning
  */
 public class WordCountSpout extends BaseRichSpout {
 

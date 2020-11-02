@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 累加计数
  *
- * @author wangn
+ * @author itning
  */
 public class WordCountCountBolt extends BaseRichBolt {
 

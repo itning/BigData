@@ -9,14 +9,14 @@ import java.util.Objects;
 /**
  * 文件读写
  *
- * @author wangn
+ * @author itning
  */
 public class FileTest {
     public static void main(String[] args) {
         String inFile = Objects.requireNonNull(FileTest.class.getClassLoader().getResource("test.txt")).getFile();
         try (FileInputStream fin = new FileInputStream(inFile);
              FileChannel fc = fin.getChannel();
-             FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\wangn\\Desktop\\out.txt");
+             FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\itning\\Desktop\\out.txt");
              FileChannel outputStreamChannel = fileOutputStream.getChannel()) {
             // ByteBuffer buffer = ByteBuffer.allocate(1024);
             // fc.read(buffer);

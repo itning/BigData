@@ -3,7 +3,7 @@ package proxy.jdk;
 /**
  * 动态代理 主方法
  *
- * @author wangn
+ * @author itning
  */
 public class ProxyMain {
     public static void main(String[] args) {

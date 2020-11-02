@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class WordCountBolt extends BaseRichBolt {
 

@@ -14,7 +14,7 @@ import java.util.Map;
  * 接受数据然后执行处理的组件,用户可以在其中执行自己想要的操作。<br/>
  * 字符串进行分割操作
  *
- * @author wangn
+ * @author itning
  */
 public class WordCountSplitBolt extends BaseRichBolt {
 

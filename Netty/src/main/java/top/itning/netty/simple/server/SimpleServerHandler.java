@@ -11,7 +11,7 @@ import io.netty.util.ReferenceCountUtil;
 /**
  * 简单服务端规则处理器
  *
- * @author wangn
+ * @author itning
  */
 public class SimpleServerHandler extends ChannelInboundHandlerAdapter {
     @Override

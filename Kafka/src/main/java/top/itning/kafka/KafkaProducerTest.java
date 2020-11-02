@@ -12,7 +12,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author wangn
+ * @author itning
  */
 public class KafkaProducerTest {
     private static final Logger logger = LoggerFactory.getLogger(KafkaProducerTest.class);

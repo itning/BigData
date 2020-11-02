@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 单线程调度池
  *
- * @author wangn
+ * @author itning
  */
 @SuppressWarnings("all")
 public class SingleThreadScheduledExecutorTest {
