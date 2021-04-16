@@ -10,7 +10,7 @@
 [![GitHub license](https://img.shields.io/github/license/itning/BigData.svg)](https://github.com/itning/BigData/blob/master/LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/itning/BigData.svg)](https://github.com/itning/BigData/commits)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/itning/BigData.svg)](https://github.com/itning/BigData)
-[![HitCount](http://hits.dwyl.io/itning/BigData.svg)](http://hits.dwyl.io/itning/BigData)
+[![HitCount](http://hits.dwyl.com/itning/BigData.svg)](http://hits.dwyl.com/itning/BigData)
 
 -> zookeeper Zookeeper 相关API
 
