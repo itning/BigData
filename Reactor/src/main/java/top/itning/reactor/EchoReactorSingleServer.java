@@ -94,8 +94,9 @@ public class EchoReactorSingleServer implements Runnable {
                     sendState = false;
                 } else {
                     System.out.println("读事件 " + socketChannel.getRemoteAddress());
-                    while (socketChannel.read(BYTE_BUFFER) > 0) {
-
+                    int length;
+                    while ((length = socketChannel.read(BYTE_BUFFER)) > 0) {
+                        System.out.println(new String(BYTE_BUFFER.array(), 0, length));
                     }
                     BYTE_BUFFER.flip();
                     selectionKey.interestOps(SelectionKey.OP_WRITE);
