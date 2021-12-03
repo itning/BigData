@@ -16,7 +16,7 @@ public class RandomWordGenerate {
     public static void main(String[] args) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("D:\\data.txt"));
 
-        for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE / 2; i++) {
             String word = createWord(MIN_LETTERS, MAX_LETTERS);
             bufferedWriter.write(word);
             if (Math.random() > 0.5) {
