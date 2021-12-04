@@ -1,10 +1,8 @@
 package top.itning.w;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
+import java.nio.channels.FileChannel;
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
@@ -16,7 +14,7 @@ import java.util.function.Consumer;
 public class BigFileWordCount {
     public static void main(String[] args) throws IOException {
         BigFileWordCount bigFileWordCount = new BigFileWordCount();
-        bigFileWordCount.doStart(200, "D:\\data.txt", "D:\\da.txt", "D:\\a\\");
+        bigFileWordCount.doStart(10, "D:\\data1.txt", "D:\\da.txt", "D:\\a\\");
     }
 
     private void doStart(int fileNum, String dataPath, String targetPath, String tempDir) throws IOException {
@@ -100,43 +98,47 @@ public class BigFileWordCount {
         return files;
     }
 
+    /**
+     * 每次每个文件读一行，取最高的，其余的放回（指针回退）,循环
+     */
     private void merge(File[] files, String targetPath) throws IOException {
         System.out.println("开始合并");
-        BufferedReader[] bufferedReaders = new BufferedReader[files.length];
-        for (int i = 0; i < files.length; i++) {
-            bufferedReaders[i] = new BufferedReader(new FileReader(files[i]));
-        }
-        boolean[] done = new boolean[files.length];
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(targetPath, false));
         List<WordWrapper> list = new ArrayList<>(files.length);
+        LinkedList<BufferedReader> scanFileList = new LinkedList<>();
+        for (File file : files) {
+            scanFileList.add(new BufferedReader(new FileReader(file)));
+        }
         do {
-            for (int i = 0; i < files.length; i++) {
-                if (done[i]) {
-                    continue;
-                }
-                BufferedReader bufferedReader = bufferedReaders[i];
+            Iterator<BufferedReader> iterator = scanFileList.listIterator(0);
+            while (iterator.hasNext()) {
+                BufferedReader bufferedReader = iterator.next();
                 bufferedReader.mark(1024 * 1024);
                 WordWrapper wordWrapper = readLine(bufferedReader);
                 if (wordWrapper == null) {
-                    done[i] = true;
+                    iterator.remove();
+                    System.out.println("一个文件读取完成 " + System.currentTimeMillis());
                     continue;
                 }
                 wordWrapper.setBufferedReader(bufferedReader);
                 list.add(wordWrapper);
             }
+
             if (list.isEmpty()) {
                 continue;
             }
             list.sort((o1, o2) -> Long.compare(o2.count, o1.count));
-            for (int i = 0; i < list.size(); i++) {
-                if (i == 0) {
-                    bufferedWriter.write(list.get(0).toString());
+            WordWrapper wordWrapper = list.get(0);
+            bufferedWriter.write(wordWrapper.toString());
+            for (int i = 1; i < list.size(); i++) {
+                if (wordWrapper.count == list.get(i).count) {
+                    bufferedWriter.write(list.get(i).toString());
                     continue;
                 }
                 list.get(i).getBufferedReader().reset();
             }
             list.clear();
-        } while (!isAllDone(done));
+        } while (!scanFileList.isEmpty());
 
         bufferedWriter.flush();
         bufferedWriter.close();
@@ -227,6 +229,96 @@ public class BigFileWordCount {
         @Override
         public String toString() {
             return word + " " + count + "\n";
+        }
+    }
+
+    /**
+     * 将文件分割成单个小文件
+     */
+    private void split(String filePath, String targetDir, int wantSplitNum) throws IOException {
+        List<SegmentedFile> split = split(filePath, wantSplitNum);
+        System.out.println(split);
+        RandomAccessFile randomAccessFile = new RandomAccessFile(filePath, "r");
+        FileChannel channel = randomAccessFile.getChannel();
+
+        for (SegmentedFile segmentedFile : split) {
+            FileOutputStream fileOutputStream = new FileOutputStream(targetDir + segmentedFile.toString() + ".txt");
+            FileChannel writeableChannel = fileOutputStream.getChannel();
+            channel.transferTo(segmentedFile.start, segmentedFile.getLength(), writeableChannel);
+            writeableChannel.close();
+            fileOutputStream.close();
+        }
+    }
+
+    private List<SegmentedFile> split(String filePath, int wantSplitNum) throws IOException {
+        List<SegmentedFile> segmentedFiles = new ArrayList<>(wantSplitNum);
+        File file = new File(filePath);
+        long length = file.length();
+        System.out.println("文件总长度 " + length);
+        long singleFileLength = length / wantSplitNum;
+        System.out.println("期望每个文件长度 " + singleFileLength + " " + singleFileLength + "*" + wantSplitNum + "+" + (length - (singleFileLength * wantSplitNum)) + "=" + length);
+        RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+        long startPos = 0L;
+        for (int i = 0; i < wantSplitNum; i++) {
+            if (i == wantSplitNum - 1) {
+                long end = startPos + (length - startPos);
+                System.out.println("文件 " + i + " start " + startPos + " end " + end + " length " + (end - startPos));
+                segmentedFiles.add(new SegmentedFile(startPos, end));
+                break;
+            }
+            Long pos;
+            if (i == 0) {
+                pos = getTheNextLineBreakPosition(randomAccessFile, singleFileLength);
+            } else {
+                pos = getTheNextLineBreakPosition(randomAccessFile, singleFileLength + startPos);
+            }
+            System.out.println("文件 " + i + " start " + startPos + " end " + pos + " length " + (pos - startPos));
+            segmentedFiles.add(new SegmentedFile(startPos, pos));
+            startPos = pos;
+        }
+        return segmentedFiles;
+    }
+
+    private Long getTheNextLineBreakPosition(RandomAccessFile randomAccessFile, long startSearchPos) throws IOException {
+        randomAccessFile.seek(startSearchPos);
+        System.out.println("当前文件位置 " + randomAccessFile.getFilePointer());
+        int read;
+        // 没有找到换行符返回null
+        Long pos = null;
+        while ((read = randomAccessFile.read()) != -1) {
+            if (read == '\n') {
+                pos = randomAccessFile.getFilePointer();
+                break;
+            }
+            if (read == '\r') {
+                long temp = randomAccessFile.getFilePointer();
+                if (randomAccessFile.read() != '\n') {
+                    randomAccessFile.seek(temp);
+                }
+                pos = randomAccessFile.getFilePointer();
+                break;
+            }
+        }
+        System.out.println("查找到的位置 " + pos);
+        return pos;
+    }
+
+    public static class SegmentedFile {
+        private final long start;
+        private final long end;
+
+        public SegmentedFile(long start, long end) {
+            this.start = start;
+            this.end = end;
+        }
+
+        public long getLength() {
+            return end - start;
+        }
+
+        @Override
+        public String toString() {
+            return "{" + start + "-" + end + "}";
         }
     }
 }
