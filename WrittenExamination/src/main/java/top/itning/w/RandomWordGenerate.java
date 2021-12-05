@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
+ * 随机单词生成器
+ *
  * @author itning
  * @since 2021/12/3 10:42
  */
