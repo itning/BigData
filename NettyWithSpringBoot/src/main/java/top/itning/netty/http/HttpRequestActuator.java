@@ -31,12 +31,24 @@ public class HttpRequestActuator {
         String s = bodyByteBuf.toString(StandardCharsets.UTF_8);
         log.info("Route：{} Msg：{}", route, s);
 
+        switch (route.getPath()) {
+            case "/users": {
 
-        User user = JSON.parseObject(s, User.class);
+                List<User> userList = userInfoService.getAll();
 
-        List<User> userList = userInfoService.getAll();
+                return toJsonOkResponse(userList);
+            }
+            case "/user": {
+                User user = JSON.parseObject(s, User.class);
 
-        return toJsonOkResponse(userList);
+                return toJsonOkResponse(user);
+            }
+            default: {
+                DefaultFullHttpResponse notFoundResponse = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.NOT_FOUND);
+                notFoundResponse.headers().set(HttpHeaderNames.CONTENT_LENGTH, 0);
+                return notFoundResponse;
+            }
+        }
     }
 
     private DefaultFullHttpResponse toJsonOkResponse(Object object) {
