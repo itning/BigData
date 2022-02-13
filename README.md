@@ -24,6 +24,14 @@
 
 -> netty Netty相关
 
+-> netty with spring boot 使用SpringBoot集成Netty
+
+-> WrittenExamination 笔试题
+
+-> Leetcode 力扣
+
+-> DesignPatterns 设计模式
+
 -> Nio JAVA Nio相关
 
 -> Storm 实时计算Storm相关

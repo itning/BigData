@@ -8,6 +8,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
+import io.netty.handler.codec.http.HttpServerKeepAliveHandler;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.util.concurrent.DefaultThreadFactory;
 import lombok.extern.slf4j.Slf4j;
@@ -29,10 +30,12 @@ import java.util.concurrent.TimeUnit;
 public class HttpServer implements InitializingBean {
 
     private final BusinessHandler businessHandler;
+    private final GlobalExceptionHandler globalExceptionHandler;
 
     @Autowired
-    public HttpServer(BusinessHandler businessHandler) {
+    public HttpServer(BusinessHandler businessHandler, GlobalExceptionHandler globalExceptionHandler) {
         this.businessHandler = businessHandler;
+        this.globalExceptionHandler = globalExceptionHandler;
     }
 
     public void initNetty() throws InterruptedException {
@@ -48,10 +51,12 @@ public class HttpServer implements InitializingBean {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new LoggingHandler());
-                            ch.pipeline().addLast(new HttpServerCodec());
-                            ch.pipeline().addLast(new HttpObjectAggregator(1024 * 1024));
-                            ch.pipeline().addLast(businessHandler);
+                            ch.pipeline().addLast("log", new LoggingHandler());
+                            ch.pipeline().addLast("http", new HttpServerCodec());
+                            ch.pipeline().addLast("keepAlive", new HttpServerKeepAliveHandler());
+                            ch.pipeline().addLast("aggregator", new HttpObjectAggregator(1024 * 1024));
+                            ch.pipeline().addLast("business", businessHandler);
+                            ch.pipeline().addLast("exception", globalExceptionHandler);
                         }
                     })
                     .childOption(ChannelOption.SO_KEEPALIVE, true)

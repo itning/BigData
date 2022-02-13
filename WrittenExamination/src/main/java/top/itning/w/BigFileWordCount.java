@@ -116,7 +116,7 @@ public class BigFileWordCount {
             Iterator<BufferedReader> iterator = scanFileList.listIterator(0);
             while (iterator.hasNext()) {
                 BufferedReader bufferedReader = iterator.next();
-                bufferedReader.mark(1024 * 1024);
+                bufferedReader.mark(1024);
                 WordWrapper wordWrapper = readLine(bufferedReader);
                 if (wordWrapper == null) {
                     iterator.remove();
